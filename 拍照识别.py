@@ -25,5 +25,5 @@ def img_to_str(imag_path):
         return '\n'.join([w['words'] for w in result['words_result']])
 
 
-res = img_to_str(r'D:\20200421124055.png')
-print(res)
+# res = img_to_str(r'D:\20200421124055.png')
+# print(res)
