@@ -1,4 +1,6 @@
 # -*-coding：utf-8-*-
+
+
 from aip import AipOcr
 
 config = {

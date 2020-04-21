@@ -66,8 +66,6 @@ def get_music_name():
     song_load(item)
 
 
-
-
 # 创建界面
 root = Tk()
 # 创建窗口标题
