@@ -2,9 +2,9 @@
 from aip import AipOcr
 
 config = {
-    'appId': '19497493',
-    'apiKey': 'VIFTg9DCwihn6LLW47M8vFpN',
-    'secretKey': 'li81u532GNulkIbXUgWugL8dgH8PtCwL',
+    'appId': '18551409',
+    'apiKey': 'uQ8YmvGmfcGhGy8UaRHkvd0W',
+    'secretKey': 'iYYCbEcFYsgnyLNGaVaKso4eZ8MI3r7Z',
 
 }
 client = AipOcr(**config)
@@ -14,9 +14,16 @@ client = AipOcr(**config)
 def get_file_content(file):
     with open(file, 'rb') as f:
         return f.read()
-# 把图片利的文字识别出来
+
+
+# 把图片里的文字识别出来
 def img_to_str(imag_path):
     image = get_file_content(imag_path)
     result = client.handwriting(image)
-    print(result)
-img_to_str(r'C:\Users\Administrator\Desktop\微信图片_20200420213822.jpg')
+    # print(result)
+    if 'words_result' in result:
+        return '\n'.join([w['words'] for w in result['words_result']])
+
+
+res = img_to_str(r'D:\20200421124055.png')
+print(res)
